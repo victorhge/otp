@@ -413,6 +413,7 @@ Eterm erts_pd_hash_get_with_hx(Process *p, Uint32 hx, Eterm id)
     unsigned int hval;
     ProcDict *pd = p->dictionary;
 
+    ASSERT(!is_atom(id));
     ASSERT(hx == MAKE_HASH(id));
     if (pd == NULL)
 	return am_undefined;

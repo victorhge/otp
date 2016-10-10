@@ -4344,9 +4344,6 @@ static int
 hash_internal_genop_arg(LoaderState* stp, GenOpArg Key, Uint32* hx)
 {
     switch (Key.type) {
-    case TAG_a:
-	*hx = atom_tab(atom_val(Key.val))->slot.bucket.hvalue;
-	return 1;
     case TAG_i:
 	*hx = Key.val;
 	return 1;
